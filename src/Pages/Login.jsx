@@ -33,7 +33,7 @@ export default function Login() {
     setSession({ ...cleanUser });
     localStorage.setItem('session', JSON.stringify({...cleanUser}))
 
-    navigate("/home")
+    navigate("/")
   };
 
   return (

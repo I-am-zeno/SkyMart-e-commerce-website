@@ -6,7 +6,7 @@ import { SkyMartContext } from "../Context/ContextProvider";
 
 export default function Register() {
   const { users, setUsers, setSession } = useContext(SkyMartContext);
-  const getUsers = JSON.parse(localStorage.getItem("users"));
+  const getUsers = JSON.parse(localStorage.getItem("users")) || [];
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -46,6 +46,7 @@ export default function Register() {
 
     localStorage.setItem("users", JSON.stringify(updatedData));
     localStorage.setItem("session", JSON.stringify({ ...session }));
+    navigate('/')
     reset();
   };
 
